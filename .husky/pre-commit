@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Pre-commit hook script to automatically fix ESLint issues
+
+echo "🔍 Running ESLint pre-commit checks..."
+
+# Fix ESLint issues
+npm run lint:fix
+
+# Check if there are any remaining issues
+if npm run lint; then
+    echo "✅ ESLint checks passed!"
+    exit 0
+else
+    echo "❌ ESLint checks failed. Please fix the issues above."
+    exit 1
+fi
