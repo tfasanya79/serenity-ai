@@ -10,6 +10,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     slug: 'serenity-ai',
     version: '1.0.0',
     orientation: 'portrait',
+    platforms: ['ios', 'android', 'web'],
     icon: './assets/icon.png',
     userInterfaceStyle: 'automatic',
     splash: {
