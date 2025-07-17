@@ -1,6 +1,6 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const axios = require('axios');
+// const axios = require('axios'); // TODO: Will be used for external API calls
 const { Pool } = require('pg');
 const Joi = require('joi');
 const router = express.Router();
@@ -144,7 +144,9 @@ router.post('/session/start', authenticateToken, async (req, res) => {
 
 // Generate personalized therapy plan
 async function generateTherapyPlan(sessionData) {
-  const { sessionType, duration, goals, userMoodData, therapyHistory } = sessionData;
+  const { sessionType, duration, userMoodData } = sessionData;
+  // TODO: Implement goals and therapyHistory usage
+  // const { goals, therapyHistory } = sessionData;
     
   const plan = {
     phases: [],
